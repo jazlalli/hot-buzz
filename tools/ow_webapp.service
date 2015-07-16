@@ -1,0 +1,14 @@
+[Unit]
+Description=Online Wednesday web application for viewing latest hot products
+
+[Service]
+ExecStart=/usr/local/bin/node /var/www/ow/app/index.js
+Restart=always
+User=nobody
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/var/www/ow/app
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OW error alert</title>
+</head>
+<body style="color: #444;">
+	<h1 style="color: red;">{{ this.heading }}</h1>
+
+	<hr />
+
+	<code style="font-size: 10pt;">
+		<h3 style='font-weight: normal;'>at {{{ this.timestamp }}} on {{ this.host }}</h3>
+		<br />
+
+		{{#each this.lines}}
+			{{ this }} <br /> &nbsp; &nbsp;
+		{{/each}}
+	</code>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+select[data-ss-uuid] {
+	display: none;
+	pointer-events: none;
+}
+
+.style-select {
+	display: block;
+	position: relative;
+	float: left;
+	text-align: left;
+
+	&, * {
+		padding: 0;
+		margin: 0;
+		display: block;
+	}
+
+	ul {
+		top: 0;
+		left: 0;
+		position: absolute;
+		list-style-type: none;
+		float: left;
+		width: 100%;
+		display: none;
+	}
+
+	&.open {
+		.ss-selected-option {
+			display: none;
+		}
+		ul {
+			display: block;
+		}
+	}
+
+	li,
+	div {
+		cursor: pointer;
+		list-style-type: none;
+		display: block;
+		clear: both;
+		width: 100%;
+		float: left;
+		&:hover {
+		}
+	}
+
+	div {
+		position: relative;
+		&:hover {
+		}
+	}
+
+}

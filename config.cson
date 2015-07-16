@@ -1,0 +1,36 @@
+{
+	port: 3030,
+	resultLimit: 100,
+	mongodb:
+		host: '127.0.0.1'
+		port: '27017'
+		name: 'OnlineWednesday'
+	schedule:
+		feedConsumer: '12 hours'
+		productRanker: '03:00am'
+	feeds:
+		iwoot:
+			url: 'https://www.kimonolabs.com/api/6rmxjwb0?apikey=RZz4qgKK9QHfWKwyPhuK9CiqrSn6rTgz'
+			isRSS: false
+		firebox:
+			url: 'https://www.kimonolabs.com/api/d896sppg?apikey=RZz4qgKK9QHfWKwyPhuK9CiqrSn6rTgz'
+			isRSS: false
+		verge:
+			url: 'https://www.kimonolabs.com/api/1su8v1ro?apikey=RZz4qgKK9QHfWKwyPhuK9CiqrSn6rTgz'
+			isRSS: false
+		lyst:
+			url: 'https://www.kimonolabs.com/api/bki5uhxg?apikey=RZz4qgKK9QHfWKwyPhuK9CiqrSn6rTgz'
+			isRSS: false
+		porter:
+			url: 'https://www.kimonolabs.com/api/4883q9r0?apikey=RZz4qgKK9QHfWKwyPhuK9CiqrSn6rTgz'
+			isRSS: false
+	twitter:
+		consumerKey: 'dbx0YXmdJ2fQFApOuT0FBg',
+		consumerSecret: 'EQJ442z0dcdRDvGvRaeXwOMR4qrSXE6Q5leUWPRPRE'
+		accessToken: '862748707-Dr3WDxh9s2XnvrO4XsR60B8gp3SkX9W7xb1oxUUv'
+		accessTokenSecret: 'LxDrO8MITglcSpGmQzGNXpIq09wTBY77nsjnxows24qzZ'
+		userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36'
+	alerts:
+		enabled: true
+		emailAddresses: ['jaz@thesandpit.com', 'mike@thesandpit.com']
+}

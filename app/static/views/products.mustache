@@ -1,0 +1,89 @@
+<h1 class="subhead">Products</h1>
+
+{{#products}}
+  <!-- A single product -->
+  <section class="product" data-product-id="{{ _id }}">
+    <header class="product-header">
+
+
+
+      <h2 class="product-title">
+        {{ title }} - <b>{{ Math.round(score) }}</b>
+        <div class="actions">
+          <div class="useful {{^useful}}disabled{{/}}" data-product-id="{{ _id }}"></div>
+          <div class="remove" data-product-id="{{ _id }}">
+            <div class="overlay hidden">
+              <form class="reason">
+                <label>
+                  <input type="radio" name="removeReason" value="0">Not Relevant
+                </label>
+                <label>
+                  <input type="radio" name="removeReason" value="1">Not Interesting
+                </label>
+                <label>
+                  <input type="radio" name="removeReason" value="2">Too Weird
+                </label>
+                <label>
+                  <input type="radio" name="removeReason" value="3">Other
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </h2>
+
+      <div class="product-meta">
+        <!-- Pardon the wrapper, since img can be variable, we need a constantly sized container for the page to render quickly -->
+        <div class="product-image">
+          <a href="{{this.url}}"><img src="{{ image }}" alt="{{ title }}"/></a>
+        </div>
+        From: <a href="{{this.url}}">{{this.site}}</a>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>source</th>
+            {{#primaryShareData:i}}
+              <th>{{{ getPrettyDate(primaryShareData[i].date) }}}</th>
+            {{/}}
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <h4>Primary</h4>
+              <div class="sparkline" data-values="{{#primaryShareData}} {{ Math.round(count)+' ' }} {{/}}"></div>
+            </td>
+            {{#primaryShareData}}
+              <td>{{ Math.round(count) }}</td>
+            {{/}}
+          </tr>
+
+          <tr>
+            <td>
+              <h4>Secondary</h4>
+              <div class="sparkline" data-values="{{#secondaryShareData}} {{ Math.round(count)+' '}} {{/}}"></div>
+            </td>
+            {{#secondaryShareData}}
+              <td>{{ Math.round(count) }}</td>
+            {{/}}
+          </tr>
+        </tbody>
+      </table>
+
+    </header>
+
+  </section>
+  <div class="content-subhead"></div>
+{{ else }}
+  {{# productsLoading }}
+    <div class="loader-container">
+      <img src="/static/images/loading-bars.svg">
+    </div>
+  {{ else}}
+    <p>No products</p>
+  {{/}}
+
+{{/}}

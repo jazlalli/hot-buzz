@@ -1,0 +1,65 @@
+@import "normalize.scss";
+@import "styleselect.scss";
+
+select {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Never mind Flexbox. Spec changes too much and docs are hard to find.
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-center-parent() {
+  transform-style: preserve-3d;
+}
+
+// Slight variant of the waves mixin as some oddness was encountered.
+@mixin vertical-center-child() {
+  position: relative;
+  transform: translateY(25%);
+  overflow: scroll;
+  height: 100%;
+}
+
+// Disable Chrome overscoll - http://stackoverflow.com/questions/12046315/prevent-overscolling-of-web-page
+html {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+  thead {
+    background: #e0e0e0;
+    color: #000;
+    text-align: left;
+    vertical-align: bottom;
+  }
+  th, td {
+    border-width: 0 0 1px;
+    border-bottom: 1px solid #cbcbcb;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: .5em 1em;
+    border-left: 1px solid #cbcbcb;
+  }
+}
