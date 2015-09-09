@@ -1,4 +1,4 @@
-# Online Wednesday (OW)
+# Hot Buzz
 
 ## Overview
 
